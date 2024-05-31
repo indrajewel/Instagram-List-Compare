@@ -1,4 +1,7 @@
 import datetime
+from pathlib import Path
+import json
+from loaddata import followers, following
 
 def names_only(data1, data2):
     # data1 = followers data2 = following
@@ -34,3 +37,18 @@ def print_diff(diff1, diff2, max):
     #     print(f'''{diff1[x]:<25} |      {diff2[x]:<25}''')
     
     return diff1, diff2
+
+root = Path(__file__).parents[1]
+
+def exportjson(list, filename):
+    path = root / f'processed/{filename}.json'
+
+    with open(path, 'w') as f:
+        json.dump(list, f, indent=2)
+    print(f'exported {list} to {path}')
+
+def tag_batch(UserList, namelist, taglist):
+    for name in namelist:
+        break
+    print(f'tags added to users')
+    pass
