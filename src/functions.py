@@ -2,8 +2,8 @@ import datetime
 
 def names_only(data1, data2):
     # data1 = followers data2 = following
-    list1 = [x[0] for x in data1]
-    list2 = [x[0] for x in data2]
+    list1 = [x['name'] for x in data1]
+    list2 = [x['name'] for x in data2]
     return list1, list2
 
 def not_in(list1, list2):
@@ -17,14 +17,14 @@ def not_in(list1, list2):
     return difference1, difference2, max
 
 def print_diff(diff1, diff2, max):
-    print('NOT IN LIST 1')
+    print('NOT FOLLOWING')
     for x in diff1:
         print(x)
     print(f'''
 
 
 ''')
-    print('NOT IN LIST 2')
+    print('NOT FOLLOWED BY')
     for x in diff2:
         print(x)
 
